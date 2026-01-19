@@ -1,0 +1,107 @@
+:root {
+    color-scheme: dark;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background-color: #1c1b22;
+    color: #fbfbfe;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0060df;
+}
+
+.header h2 {
+    color: #fbfbfe;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    background: #2b2a33;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+.list-panel {
+    flex: 1;
+    border: 1px solid #52525e;
+    border-radius: 4px;
+    overflow-y: auto;
+    background: #1c1b22;
+}
+
+.editor-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #2b2a33;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background 0.2s;
+    color: #fbfbfe;
+}
+
+li:hover { background-color: #38383d; }
+li.active { background-color: #0060df; color: white; }
+
+textarea {
+    flex: 1;
+    padding: 15px;
+    background-color: #1c1b22;
+    color: #fbfbfe;
+    border: 1px solid #52525e;
+    border-radius: 4px;
+    resize: none;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+textarea:focus { outline: 2px solid #0060df; border-color: transparent; }
+
+.buttons { display: flex; gap: 10px; }
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+    color: white;
+}
+
+.btn:hover { opacity: 0.9; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; background-color: #42414d; color: #8f8f9d; }
+
+.primary { background-color: #0060df; }
+.secondary { background-color: #28a745; }
+.danger { background-color: #d9534f; margin-left: auto; }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prompt Manager</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="header">
+    <h2>Prompt Manager</h2>
+  </div>
+
+  <div class="container">
+    <div class="list-panel">
+      <ul id="prompt-list"></ul>
+    </div>
+
+    <div class="editor-panel">
+      <textarea id="editor" placeholder="Select a prompt to edit or click New..."></textarea>
+      <div class="buttons">
+        <button id="new-btn" class="btn secondary">New Prompt</button>
+        <button id="save-btn" class="btn primary">Save</button>
+        <button id="del-btn" class="btn danger" disabled>Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
