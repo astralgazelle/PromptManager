@@ -1,8 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Prompt Manager",
-  "version": "1.0",
-  "description": "Save and insert prompts.",
+  "description": "Save and insert text.",
   "permissions": [
     "storage",
     "activeTab",
@@ -43,3 +42,4 @@
       }
     }
   }
+}
