@@ -41,8 +41,10 @@ body {
     flex: 1;
     border: 1px solid #52525e;
     border-radius: 4px;
-    overflow-y: auto;
     background: #1c1b22;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .editor-panel {
@@ -56,6 +58,8 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    flex: 1;
+    overflow-y: auto;
 }
 
 li {
@@ -105,3 +109,17 @@ textarea:focus { outline: 2px solid #0060df; border-color: transparent; }
 .primary { background-color: #0060df; }
 .secondary { background-color: #28a745; }
 .danger { background-color: #d9534f; margin-left: auto; }
+
+.io-buttons {
+    padding: 10px;
+    border-top: 1px solid #52525e;
+    display: flex;
+    gap: 10px;
+    background: #2b2a33;
+}
+
+.btn.small {
+    padding: 5px 10px;
+    font-size: 12px;
+    flex: 1;
+}

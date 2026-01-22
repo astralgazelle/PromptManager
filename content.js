@@ -1,20 +1,23 @@
-let lastActiveElement = null;
+let targetElement = null;
 
-document.addEventListener('focus', (e) => {
-    lastActiveElement = e.target;
+document.addEventListener('contextmenu', (e) => {
+    targetElement = e.target;
 }, true);
 
-document.addEventListener('blur', (e) => {
-    const t = e.target;
-    if (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable) {
-        lastActiveElement = t;
-    }
+document.addEventListener('focus', (e) => {
+    targetElement = e.target;
 }, true);
 
 browser.runtime.onMessage.addListener((msg) => {
-    const el = lastActiveElement || document.activeElement;
+    let el = targetElement || document.activeElement;
 
     if (!el) return;
+
+    if (!el.isContentEditable && el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA') {
+        if (el.closest('[contenteditable="true"]')) {
+            el = el.closest('[contenteditable="true"]');
+        }
+    }
 
     const text = msg.text;
 
